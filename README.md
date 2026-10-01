@@ -1,6 +1,20 @@
 # SPOTLAND — Travel PWA
 
-India-first travel PWA with nearby spots/venues, routes, weather, events, crowd reports, optional Google accounts, favorites, trips, live sharing, SOS and offline saved places. Photos and Web Push remain disabled. The sections below retain each milestone's implementation notes; see `STATUS_REPORT.md` for the current release status and remaining launch gates.
+India-first travel PWA with nearby spots/venues, routes, weather, events, crowd reports, optional Google accounts, favorites, trips, live sharing, SOS and offline saved places. Photo uploads are deployed and verified; Web Push receiving is configured, while real delivery testing remains pending and nearby SOS broadcasting stays disabled. The sections below retain each milestone's implementation notes; see `STATUS_REPORT.md` for the current release status and remaining launch gates.
+
+## Live website
+
+**Open SPOTLAND: [https://spotland.pages.dev](https://spotland.pages.dev)**
+
+This is the public internet deployment, accessible from a phone or computer. `http://127.0.0.1:5173` is the separate local development address.
+
+- Frontend: Cloudflare Pages, with installable PWA support.
+- Backend: a private Cloudflare Worker reached through the website's same-origin `/api` service binding.
+- Storage: Cloudflare D1 for application data and private R2 for moderated review photos.
+- Deployed services: production Google sign-in, account-scoped favorites/trips/reviews, photo moderation and automatic expiry cleanup.
+- Browsing works without login. Street map tiles require a connection; saved place copies and the app shell support offline use.
+
+Deployment is complete, but general safety launch approval remains pending. Nearby SOS broadcasting is disabled. Physical-device safety/push tests, full accessibility review, legal/operator approval and platform logging/quota checks remain open. See [launch checklist](LAUNCH_CHECKLIST.md) and [verification report](reports/release-checks/scheduled-verification.md). R2 has a free allowance with billable overages; the operator must monitor usage.
 
 ## Local development
 
