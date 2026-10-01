@@ -4,26 +4,29 @@ import { resolve } from 'node:path';
 
 const project = 'spotland';
 const statePath = resolve('.release/rollback.json');
-const wrangler = process.platform === 'win32' ? '.\\node_modules\\.bin\\wrangler.cmd' : 'node_modules/.bin/wrangler';
+const wranglerScript = resolve('node_modules/wrangler/bin/wrangler.js');
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 function run(command, args, options = {}) {
   return execFileSync(command, args, {
     encoding: 'utf8',
     stdio: ['inherit', 'pipe', 'pipe'],
-    shell: process.platform === 'win32',
     ...options,
   });
 }
 
-function show(command, args) {
+function show(command, args, options) {
   try {
-    return run(command, args);
+    return run(command, args, options);
   } catch (error) {
     process.stdout.write(error.stdout ?? '');
     process.stderr.write(error.stderr ?? '');
     throw error;
   }
+}
+
+function showWrangler(args) {
+  return show(process.execPath, [wranglerScript, ...args]);
 }
 
 function requireCleanTree() {
@@ -32,7 +35,7 @@ function requireCleanTree() {
 }
 
 function pagesDeployments() {
-  return JSON.parse(show(wrangler, ['pages', 'deployment', 'list', '--project-name', project, '--json']));
+  return JSON.parse(showWrangler(['pages', 'deployment', 'list', '--project-name', project, '--json']));
 }
 
 async function health(url) {
@@ -42,7 +45,7 @@ async function health(url) {
 
 async function main() {
   requireCleanTree();
-  show(npm, ['run', 'release:verify']);
+  show(npm, ['run', 'release:verify'], { shell: process.platform === 'win32' });
 
   const current = pagesDeployments().find((deployment) => deployment.Environment === 'Production');
   if (!current?.Id || !current.Deployment) throw new Error('Could not identify the current production Pages deployment.');
@@ -58,7 +61,7 @@ async function main() {
   writeFileSync(statePath, `${JSON.stringify(state, null, 2)}\n`);
 
   const commit = show('git', ['rev-parse', '--short', 'HEAD']).trim();
-  show(wrangler, [
+  showWrangler([
     'pages', 'deploy', 'web/dist', '--project-name', project, '--branch', 'main',
     '--commit-hash', commit, '--commit-message', `Managed SPOTLAND release ${commit}`,
   ]);
