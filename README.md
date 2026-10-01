@@ -8,6 +8,8 @@ India-first travel PWA with nearby spots/venues, routes, weather, events, crowd 
 
 This is the public internet deployment, accessible from a phone or computer. `http://127.0.0.1:5173` is the separate local development address.
 
+Read [DEVELOPMENT.md](DEVELOPMENT.md) for the maintained UI, UX, architecture and service record. Every iteration updates its log. [Release and rollback](#release-and-rollback) documents the production safeguard.
+
 - Frontend: Cloudflare Pages, with installable PWA support.
 - Backend: a private Cloudflare Worker reached through the website's same-origin `/api` service binding.
 - Storage: Cloudflare D1 for application data and private R2 for moderated review photos.
@@ -24,6 +26,12 @@ Node.js 22.12+ (or supported newer LTS) and npm required.
 npm ci
 npm run dev
 ```
+
+## Release and rollback
+
+Use `npm run deploy:web` for every Pages production release. It runs the complete verification suite, captures the current production Pages deployment in [`.release/rollback.json`](.release/rollback.json), deploys the new build, and checks the live site. Do not invoke `wrangler pages deploy` directly for ordinary releases.
+
+If the new frontend is faulty, set a local `CLOUDFLARE_API_TOKEN` with **Pages Write** permission and run `npm run rollback:web`. It restores the captured deployment immediately without rebuilding it. The token is never stored in the repository. Database migrations and Worker API changes must remain backward compatible until the release is proven stable; a Pages rollback only restores the frontend.
 
 Open http://127.0.0.1:5173. Worker runs on port 8787; Vite proxies `/api`. Copy `.env.example` to `.env` to customize public frontend settings. Never store secrets in `VITE_` variables. Worker local secrets go in git-ignored `worker/.dev.vars`; production secrets use `wrangler secret put`.
 
