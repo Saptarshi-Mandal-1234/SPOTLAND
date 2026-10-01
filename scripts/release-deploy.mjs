@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 
 const project = 'spotland';
 const statePath = resolve('.release/rollback.json');
-const wrangler = process.platform === 'win32' ? 'node_modules/.bin/wrangler.cmd' : 'node_modules/.bin/wrangler';
+const wrangler = process.platform === 'win32' ? '.\\node_modules\\.bin\\wrangler.cmd' : 'node_modules/.bin/wrangler';
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 function run(command, args, options = {}) {
