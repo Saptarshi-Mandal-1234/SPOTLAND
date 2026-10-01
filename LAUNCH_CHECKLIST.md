@@ -28,9 +28,11 @@ M9 local launch preparation and automated lab audits are complete. The public HT
 - [x] Verify deployed HTTP API isolation with two disposable session fixtures: favorites, trip read/remove/overwrite, review ownership, authentication/origin rejection and logout revocation. Both accounts/content removed; evidence in `reports/release-checks/account-isolation.json`. Real Google/browser switching remains a separate check.
 - [x] Five-minute production cron ran automatically; expired safety records and stale upload reservations were removed while an unexpired share remained. Synthetic fixtures were removed afterward.
 - [x] Review application source for payload logging: only the static cleanup-completion message is logged. This does not inspect platform log sinks.
-- [ ] Review production logging to ensure no coordinates, cookies, private links, tokens or review drafts are exposed.
+- [x] Deployed API and cleanup Worker settings report Logpush=false; application payload logging remains absent.
+- [ ] Review account-wide log sinks and retention: existing CLI credentials return 403 for account Logpush jobs.
 - [x] Recheck official provider usage policies, adapter cache/rate configuration and attribution; findings in `reports/release-checks/launch-followup.md`.
-- [ ] Operator confirms non-commercial Open-Meteo use and monitors provider quotas. Respect existing cache/rate gates; public demos are not guaranteed-capacity services. Monitor free quotas and provider errors; pause the pilot before paid infrastructure becomes necessary.
+- [x] Owner confirmed non-commercial Open-Meteo use on 1 October 2026.
+- [ ] Operator monitors account-wide provider/infrastructure quotas; procedures are in OPERATOR_RUNBOOK.md. Respect existing cache/rate gates; public demos are not guaranteed-capacity services. Monitor free quotas and provider errors; pause the pilot before paid infrastructure becomes necessary.
 
 ## Real-device safety: Android and iPhone
 

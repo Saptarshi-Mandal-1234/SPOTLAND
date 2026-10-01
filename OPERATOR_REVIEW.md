@@ -25,3 +25,4 @@ Record phone model, Android/Chrome versions and each observed result. Use consen
 ## Remaining unavailable evidence
 
 No iPhone is available. An iPhone owner must separately verify Home Screen installation/push, consent, share/composer, lock/background and expiry behavior. Android or desktop success cannot close that gate. Operator/legal approval must come from the operator/reviewer; automated audits cannot provide it.
+See OPERATOR_RUNBOOK.md for the concrete moderation, deletion-request and quota procedures prepared for approval. The owner confirmed non-commercial use; account-wide billing/log settings remain permission-limited.
