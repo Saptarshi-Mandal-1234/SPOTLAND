@@ -7,8 +7,8 @@
     "deploymentId": "cd4c6456-0ce5-4976-9cb3-00dd33728e2c",
     "url": "https://cd4c6456.spotland.pages.dev",
     "sourceCommit": "83a50cb",
-    "capturedAt": "2026-10-01T00:00:00.000Z",
-    "verification": "Known production deployment before the managed-release workflow was added."
+    "capturedAt": "2026-10-01T16:11:59.576Z",
+    "verification": "Captured automatically immediately before the next managed Pages release."
   },
   "lastCandidate": null,
   "lastRollback": null
