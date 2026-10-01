@@ -8,7 +8,12 @@ const wrangler = process.platform === 'win32' ? 'node_modules/.bin/wrangler.cmd'
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 function run(command, args, options = {}) {
-  return execFileSync(command, args, { encoding: 'utf8', stdio: ['inherit', 'pipe', 'pipe'], ...options });
+  return execFileSync(command, args, {
+    encoding: 'utf8',
+    stdio: ['inherit', 'pipe', 'pipe'],
+    shell: process.platform === 'win32',
+    ...options,
+  });
 }
 
 function show(command, args) {
