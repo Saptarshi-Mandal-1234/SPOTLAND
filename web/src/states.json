@@ -1,0 +1,363 @@
+[
+  {
+    "name": "Andhra Pradesh",
+    "landmark": "Amaravati stupa",
+    "image": "/landmarks/andhra-pradesh.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/andhra-pradesh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Arunachal Pradesh",
+    "landmark": "Tawang monastery",
+    "image": "/landmarks/arunachal-pradesh.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/arunachal-pradesh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Assam",
+    "landmark": "Kamakhya temple",
+    "image": "/landmarks/assam.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/assam.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Bihar",
+    "landmark": "Mahabodhi temple",
+    "image": "/landmarks/bihar.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/bihar.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Chhattisgarh",
+    "landmark": "Chitrakote falls",
+    "image": "/landmarks/chhattisgarh.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/chhattisgarh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Goa",
+    "landmark": "Basilica of Bom Jesus",
+    "image": "/landmarks/goa.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/goa.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Gujarat",
+    "landmark": "Rani ki Vav",
+    "image": "/landmarks/gujarat.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/gujarat.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Haryana",
+    "landmark": "Brahma Sarovar",
+    "image": "/landmarks/haryana.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/haryana.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Himachal Pradesh",
+    "landmark": "Dhauladhar peaks",
+    "image": "/landmarks/himachal-pradesh.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/himachal-pradesh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Jharkhand",
+    "landmark": "Hundru falls",
+    "image": "/landmarks/jharkhand.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/jharkhand.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Karnataka",
+    "landmark": "Hampi stone chariot",
+    "image": "/landmarks/karnataka.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/karnataka.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Kerala",
+    "landmark": "Alappuzha houseboat",
+    "image": "/landmarks/kerala.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/kerala.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Madhya Pradesh",
+    "landmark": "Sanchi stupa",
+    "image": "/landmarks/madhya-pradesh.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/madhya-pradesh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Maharashtra",
+    "landmark": "Gateway of India",
+    "image": "/landmarks/maharashtra.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/maharashtra.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Manipur",
+    "landmark": "Loktak lake",
+    "image": "/landmarks/manipur.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/manipur.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Meghalaya",
+    "landmark": "Living root bridge",
+    "image": "/landmarks/meghalaya.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/meghalaya.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Mizoram",
+    "landmark": "Phawngpui peaks",
+    "image": "/landmarks/mizoram.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/mizoram.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Nagaland",
+    "landmark": "Dzukou valley",
+    "image": "/landmarks/nagaland.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/nagaland.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Odisha",
+    "landmark": "Konark sun temple",
+    "image": "/landmarks/odisha.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/odisha.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Punjab",
+    "landmark": "Golden Temple",
+    "image": "/landmarks/punjab.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/punjab.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Rajasthan",
+    "landmark": "Hawa Mahal",
+    "image": "/landmarks/rajasthan.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/rajasthan.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Sikkim",
+    "landmark": "Kanchenjunga",
+    "image": "/landmarks/sikkim.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/sikkim.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Tamil Nadu",
+    "landmark": "Brihadeeswarar temple",
+    "image": "/landmarks/tamil-nadu.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/tamil-nadu.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Telangana",
+    "landmark": "Charminar",
+    "image": "/landmarks/telangana.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/telangana.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Tripura",
+    "landmark": "Neermahal",
+    "image": "/landmarks/tripura.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/tripura.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Uttar Pradesh",
+    "landmark": "Taj Mahal",
+    "image": "/landmarks/uttar-pradesh.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/uttar-pradesh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Uttarakhand",
+    "landmark": "Kedarnath temple",
+    "image": "/landmarks/uttarakhand.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/uttarakhand.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "West Bengal",
+    "landmark": "Howrah bridge",
+    "image": "/landmarks/west-bengal.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/west-bengal.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Andaman and Nicobar Islands",
+    "landmark": "Cellular Jail",
+    "image": "/landmarks/andaman-and-nicobar-islands.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/andaman-and-nicobar-islands.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Chandigarh",
+    "landmark": "Open Hand monument",
+    "image": "/landmarks/chandigarh.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/chandigarh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "landmark": "Diu fort",
+    "image": "/landmarks/dadra-and-nagar-haveli-and-daman-and-diu.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/dadra-and-nagar-haveli-and-daman-and-diu.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Delhi",
+    "landmark": "India Gate",
+    "image": "/landmarks/delhi.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/delhi.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Jammu and Kashmir",
+    "landmark": "Dal Lake houseboat",
+    "image": "/landmarks/jammu-and-kashmir.svg",
+    "accent": "#f2c64f",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/jammu-and-kashmir.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Ladakh",
+    "landmark": "Thiksey monastery",
+    "image": "/landmarks/ladakh.svg",
+    "accent": "#f5ad87",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/ladakh.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Lakshadweep",
+    "landmark": "Island lagoon",
+    "image": "/landmarks/lakshadweep.svg",
+    "accent": "#c5d5bf",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/lakshadweep.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  },
+  {
+    "name": "Puducherry",
+    "landmark": "French Quarter",
+    "image": "/landmarks/puducherry.svg",
+    "accent": "#d3bce7",
+    "creator": "SPOTLAND",
+    "sourceUrl": "/landmarks/puducherry.svg",
+    "license": "CC0-1.0",
+    "aliases": []
+  }
+]
+

@@ -1,0 +1,12 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "travelapp-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-30",
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": { "OPEN_METEO_URL": "https://api.open-meteo.com/v1/forecast", "ALLOWED_ORIGIN": "http://127.0.0.1:5173", "OSRM_URL_TEMPLATE": "https://routing.openstreetmap.de/routed-{profile}/route/v1/driving/", "OVERPASS_URL": "https://overpass-api.de/api/interpreter", "NOMINATIM_URL": "https://nominatim.openstreetmap.org", "PROVIDER_USER_AGENT": "TravelApp/0.1 (local development)", "TILE_URL": "https://tile.openstreetmap.org/{z}/{x}/{y}.png" },
+  "d1_databases": [{ "binding": "DB", "database_name": "travelapp", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }],
+  "r2_buckets": [{ "binding": "REVIEW_PHOTOS", "bucket_name": "spotland-review-photos" }]
+}
+
+

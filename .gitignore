@@ -1,0 +1,17 @@
+node_modules/
+web/dist/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+coverage/
+
+# Local audit/browser evidence may contain private account or environment details.
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.report.json
+reports/**/*.report.html
+reports/**/account-isolation.json
+*.log
+

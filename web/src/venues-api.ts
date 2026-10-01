@@ -1,0 +1,10 @@
+import { request } from './events-api';
+import type { Venue, VenueInput } from '../../shared/venues';
+export const listVenues = (lat: number, lon: number, city: string, signal?: AbortSignal) => request<{ venues: Venue[]; warning: string }>(`/venues?${new URLSearchParams({ lat: String(lat), lon: String(lon), city })}`, { signal });
+export const submitVenue = (data: VenueInput) => request('/venues', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+export const reportPrice = (venueId: string, reason: string) => request('/venue-reports', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ venueId, reason }) });
+const adminHeaders = (token: string) => ({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' });
+export const pendingVenues = (token: string) => request<Venue[]>('/admin/venues', { headers: adminHeaders(token) });
+export const venueReports = (token: string) => request<{ id: string; venue_id: string; reason: string }[]>('/admin/venue-reports', { headers: adminHeaders(token) });
+export const moderateVenue = (id: string, status: string, token: string) => request('/admin/venues', { method: 'POST', headers: adminHeaders(token), body: JSON.stringify({ id, status }) });
+export const resolveReport = (id: string, token: string) => request('/admin/venue-reports', { method: 'POST', headers: adminHeaders(token), body: JSON.stringify({ id }) });

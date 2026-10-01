@@ -1,0 +1,11 @@
+import { request } from './events-api';
+import type { AccountUser, FavoritePlace, FavoriteRecord } from '../../shared/accounts';
+const post = (data: unknown, signal?: AbortSignal): RequestInit => ({ method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal });
+export const accountConfig = (signal?: AbortSignal) => request<{ clientId: string }>('/auth/config', { signal, credentials: 'same-origin' });
+export const accountSession = (signal?: AbortSignal) => request<{ user: AccountUser | null }>('/auth/session', { signal, credentials: 'same-origin' });
+export const loginChallenge = (signal?: AbortSignal) => request<{ nonce: string }>('/auth/challenge', post({}, signal));
+export const googleLogin = (credential: string, signal?: AbortSignal) => request<{ user: AccountUser }>('/auth/google', post({ credential }, signal));
+export const logout = () => request('/auth/logout', post({}));
+export const favorites = (signal?: AbortSignal) => request<FavoriteRecord[]>('/favorites', { signal, credentials: 'same-origin' });
+export const saveFavorite = (place: FavoritePlace) => request('/favorites', post({ action: 'save', place }));
+export const removeFavorite = (id: string) => request('/favorites', post({ action: 'remove', id }));

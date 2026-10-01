@@ -1,0 +1,24 @@
+{
+  "year": 2026,
+  "checkedOn": "2026-09-30",
+  "license": "CC0-1.0",
+  "licenseNote": "Original curated compilation of factual names and dates. No source descriptions, images or calendar artwork copied.",
+  "source": "https://www.indiapost.gov.in/holidays-list",
+  "sourceName": "India Post: All India Holidays 2026",
+  "days": [
+    {"id":"republic-2026","name":"Republic Day","date":"2026-01-26","kind":"holiday","scope":"National holiday"},
+    {"id":"eid-fitr-2026","name":"Eid al-Fitr","date":"2026-03-21","kind":"festival","scope":"India Post central calendar; local dates may vary"},
+    {"id":"mahavir-2026","name":"Mahavir Jayanti","date":"2026-03-31","kind":"festival","scope":"India Post central calendar; local observance varies"},
+    {"id":"good-friday-2026","name":"Good Friday","date":"2026-04-03","kind":"festival","scope":"India Post central calendar; local observance varies"},
+    {"id":"buddha-2026","name":"Buddha Purnima","date":"2026-05-01","kind":"festival","scope":"India Post central calendar; local observance varies"},
+    {"id":"eid-adha-2026","name":"Eid al-Adha","date":"2026-05-27","kind":"festival","scope":"India Post central calendar; local dates may vary"},
+    {"id":"muharram-2026","name":"Muharram","date":"2026-06-26","kind":"festival","scope":"India Post central calendar; local dates may vary"},
+    {"id":"independence-2026","name":"Independence Day","date":"2026-08-15","kind":"holiday","scope":"National holiday"},
+    {"id":"milad-2026","name":"Milad un-Nabi","date":"2026-08-26","kind":"festival","scope":"India Post central calendar; local dates may vary"},
+    {"id":"gandhi-2026","name":"Gandhi Jayanti","date":"2026-10-02","kind":"holiday","scope":"National holiday"},
+    {"id":"dussehra-2026","name":"Dussehra","date":"2026-10-20","kind":"festival","scope":"India Post central calendar; local observance varies"},
+    {"id":"diwali-2026","name":"Diwali","date":"2026-11-08","kind":"festival","scope":"India Post central calendar; regional dates may vary"},
+    {"id":"guru-nanak-2026","name":"Guru Nanak Jayanti","date":"2026-11-24","kind":"festival","scope":"India Post central calendar; local observance varies"},
+    {"id":"christmas-2026","name":"Christmas","date":"2026-12-25","kind":"festival","scope":"India Post central calendar; local observance varies"}
+  ]
+}
