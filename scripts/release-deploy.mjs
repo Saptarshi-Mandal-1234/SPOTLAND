@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 const project = 'spotland';
 const statePath = resolve('.release/rollback.json');
 const wrangler = process.platform === 'win32' ? 'node_modules/.bin/wrangler.cmd' : 'node_modules/.bin/wrangler';
+const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 function run(command, args, options = {}) {
   return execFileSync(command, args, { encoding: 'utf8', stdio: ['inherit', 'pipe', 'pipe'], ...options });
@@ -36,7 +37,7 @@ async function health(url) {
 
 async function main() {
   requireCleanTree();
-  show('npm', ['run', 'release:verify']);
+  show(npm, ['run', 'release:verify']);
 
   const current = pagesDeployments().find((deployment) => deployment.Environment === 'Production');
   if (!current?.Id || !current.Deployment) throw new Error('Could not identify the current production Pages deployment.');
