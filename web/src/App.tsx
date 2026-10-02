@@ -3,11 +3,9 @@ import { APP_NAME } from './config';
 import { checkHealth } from './api';
 import { Sticker } from './design';
 import { useAccount } from './AccountContext';
-import OfflineStatus from './OfflineStatus';
 import { useOnline } from './useOnline';
 import LocalUsage from './LocalUsage';
 
-const moods = ['Slow scenes', 'Food first', 'Little adventure'];
 const Explore = lazy(() => import('./Explore'));
 const Safety = lazy(() => import('./Safety'));
 const SpecialDays = lazy(() => import('./SpecialDays'));
@@ -30,12 +28,12 @@ export function App() {
   const [calendar, setCalendar] = useState(false);
   const [events, setEvents] = useState(false);
   const [exploring, setExploring] = useState(false);
+  const [hub, setHub] = useState(false);
   const [dark, setDark] = useState(() => { try { return localStorage.getItem('theme') === 'dark'; } catch { return false; } });
-  const [mood, setMood] = useState(moods[0]);
   const [status, setStatus] = useState('Checking…');
   const online = useOnline();
   const content = useRef<HTMLElement>(null);
-  const screenKey = [sos,sharing,planning,venues,safety,calendar,events,exploring,account.open].join(':');
+  const screenKey = [sos,sharing,planning,venues,safety,calendar,events,exploring,hub,account.open].join(':');
   const previousScreen = useRef(screenKey);
   useEffect(() => {
     if (previousScreen.current === screenKey) return;
@@ -55,7 +53,6 @@ export function App() {
     {sos && <Suspense fallback={<div className="safety-fallback"><a href="tel:112">Call 112</a><p>Loading SOS…</p></div>}><SOS onClose={() => { setSos(false); if (location.hash === "#sos") history.replaceState(null, "", location.pathname + location.search); }}/></Suspense>}
     {sharing && <Suspense fallback={<div className="safety-fallback"><a href="tel:112">Call 112</a><p>Loading location sharing…</p></div>}><LiveShare key={recipientToken === undefined ? 'sender' : 'recipient:' + recipientToken} recipientToken={recipientToken} onClose={() => { setSharing(false); setRecipientToken(undefined); if (location.hash.startsWith('#live=')) history.replaceState(null, '', location.pathname + location.search); }}/></Suspense>}
     <div hidden={sharing || sos}>
-    <OfflineStatus/>
     {account.open && <Suspense fallback={<p role="status">Opening your collection…</p>}><Account/></Suspense>}
     <div hidden={account.open}>
     {planning && <Suspense fallback={<p role="status">Opening your trip postcard…</p>}><TripPlanner onClose={() => setPlanning(false)}/></Suspense>}
@@ -64,17 +61,15 @@ export function App() {
     {calendar && <Suspense fallback={<p role="status">Unfolding the calendar…</p>}><SpecialDays onClose={() => setCalendar(false)} onExplore={() => { setCalendar(false); setExploring(true); }}/></Suspense>}
     {safety && <Suspense fallback={<div className="safety-fallback"><a href="tel:112">Call 112</a><p>Loading safety tools. This app does not replace emergency services.</p></div>}><Safety onClose={() => setSafety(false)}/></Suspense>}
     {exploring && <Suspense fallback={<p role="status">Unfolding your next detour…</p>}><Explore onClose={() => setExploring(false)}/></Suspense>}
-    <div hidden={exploring || safety || calendar || events || venues || planning}>
+    <div hidden={exploring || safety || calendar || events || venues || planning || hub}>
     <header className="topbar"><a className="brand" href="/"><img className="brand-icon" src="/icons/spotland.svg" alt=""/>{APP_NAME}</a><button className="theme" onClick={() => setDark(!dark)} aria-pressed={dark}>{dark ? 'Light mode ☀' : 'Dark mode ☾'}</button></header>
-    <div id="main" className="home-content"><nav className="quick-actions" aria-label="Explore SPOTLAND"><button className="calendar-entry" onClick={() => setPlanning(true)}>Plan a trip ↗</button><button className="safety-entry emergency-entry" onClick={() => { setSharing(false); setSos(true); }}>SOS emergency help</button><button className="safety-entry" onClick={() => { setRecipientToken(undefined); setSharing(true); }}>Share live location</button><button className="calendar-entry" onClick={() => account.setOpen(true)}>Account &amp; favorites ♡</button><button className="calendar-entry" onClick={() => setVenues(true)}>Entertainment venues ↗</button><button className="safety-entry" onClick={() => setSafety(true)}>Safety & emergency numbers</button><button className="button" onClick={() => setExploring(true)}>Explore nearby ↗</button><button className="calendar-entry" onClick={() => setCalendar(true)}>Festivals & holidays ✳</button><button className="calendar-entry" onClick={() => setEvents(true)}>Community events ↗</button></nav>
-      <div className="eyebrow"><span className="tiny-dot"/> INDIA FIRST. WANDER ALWAYS.</div>
+    <div id="main" className="home-content">
       <section className="hero" aria-labelledby="hero-title">
-        <div className="intro"><Sticker>LESS SCROLL. MORE STROLL.</Sticker><h1 id="hero-title">Your next<br/>“chalo?”<br/><em>starts here.</em></h1><p>Big plans? Optional.<br/>A good little adventure? Always.</p><a className="button" href="#demo">Find your vibe <span aria-hidden="true">↗</span></a><span className="hand-note">a little detour looks good on you</span></div>
+        <div className="intro"><Sticker>LESS SCROLL. MORE STROLL.</Sticker><h1 id="hero-title">Your next<br/>“chalo?”<br/><em>starts here.</em></h1><p>Big plans? Optional.<br/>A good little adventure? Always.</p><button className="button" onClick={() => setHub(true)}>Find your vibe <span aria-hidden="true">↗</span></button><span className="hand-note">a little detour looks good on you</span></div>
         <div className="postcard" role="img" aria-label="Illustrated Indian landscape with mountains, a rising sun, and a winding path"><div className="postcard-top">POSTCARD No. 001 <span>भारत / INDIA</span></div><div className="landscape"><div className="sun"/><div className="mountain back"/><div className="mountain front"/><div className="path"/><span className="landscape-caption">somewhere good.</span></div><div className="postcard-bottom"><span>TO: YOUR WEEKEND</span><span className="stamp">GO<br/>LOCAL</span></div><Sticker tone="lilac" floating>take the scenic route ↝</Sticker></div>
       </section>
-      <section className="demo" id="demo" aria-labelledby="demo-title"><div className="section-heading"><div><span className="eyebrow">THE STARTER PACK</span><h2 id="demo-title">What's your vibe?</h2></div><span className="hand-note">no wrong answers ↙</span></div><p className="demo-note">Mood picker preview · Explore nearby for live places.</p><div className="moods">{moods.map((item, index) => <button key={item} className={`mood mood-${index}`} aria-pressed={mood === item} onClick={() => setMood(item)}><span className="mood-number">0{index + 1}</span><strong>{item}</strong><span>{['Chai, shade & a softer pace.', 'Follow your appetite.', 'Take a turn. Find a story.'][index]}</span><span className="mood-selected">{mood === item ? 'Your current vibe ✓' : 'Pick this vibe ↗'}</span></button>)}</div></section>
-      <section className="status-bar" aria-label="Connection status"><span><span className="tiny-dot"/> READY FOR A DETOUR</span><span role="status">Places service: {status} · {online ? 'Online' : 'Offline — open saved places'}</span></section>
     </div>
+    <section className="feature-hub" hidden={!hub} aria-labelledby="hub-title"><header className="topbar"><button className="back-home" onClick={() => setHub(false)}>← Home</button><strong>{APP_NAME}</strong><button className="theme" onClick={() => setDark(!dark)} aria-pressed={dark}>{dark ? 'Light mode ☀' : 'Dark mode ☾'}</button></header><div className="hub-content"><span className="eyebrow"><span className="tiny-dot"/> PICK A DETOUR</span><h1 id="hub-title">Where to?</h1><p>Everything you need, one tap away.</p><nav className="quick-actions" aria-label="SPOTLAND features"><button className="button" onClick={() => { setHub(false); setExploring(true); }}>Explore nearby ↗</button><button className="calendar-entry" onClick={() => { setHub(false); setPlanning(true); }}>Plan a trip ↗</button><button className="calendar-entry" onClick={() => { setHub(false); account.setOpen(true); }}>Account &amp; favorites ♡</button><button className="calendar-entry" onClick={() => { setHub(false); setVenues(true); }}>Entertainment venues ↗</button><button className="calendar-entry" onClick={() => { setHub(false); setCalendar(true); }}>Festivals &amp; holidays ✳</button><button className="calendar-entry" onClick={() => { setHub(false); setEvents(true); }}>Community events ↗</button><button className="safety-entry" onClick={() => { setHub(false); setSafety(true); }}>Safety &amp; emergency numbers</button><button className="safety-entry" onClick={() => { setHub(false); setRecipientToken(undefined); setSharing(true); }}>Share live location</button><button className="safety-entry emergency-entry" onClick={() => { setHub(false); setSharing(false); setSos(true); }}>SOS emergency help</button></nav><p className="hub-status" role="status">Places service: {status} · {online ? 'Online' : 'Offline — open saved places'}</p></div></section>
     <footer><span>{APP_NAME} · Made for the way you wander.</span><a href="/privacy.html">Privacy</a><a href="/attributions.html">Attributions</a></footer>
     <LocalUsage screen={sos || sharing || safety || account.open ? null : planning ? 'trips' : venues ? 'venues' : events ? 'events' : calendar ? 'calendar' : exploring ? 'explore' : 'home'}/>
 
