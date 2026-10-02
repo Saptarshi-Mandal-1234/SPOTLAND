@@ -4,16 +4,16 @@
   "accountId": "ef9e36f288b19f821d56a412f8ee671c",
   "productionUrl": "https://spotland.pages.dev",
   "rollback": {
-    "deploymentId": "540a603b-426c-4ce1-a092-b13781c1ea83",
-    "url": "https://540a603b.spotland.pages.dev",
-    "sourceCommit": "34a861b",
-    "capturedAt": "2026-10-02T12:38:10.402Z",
+    "deploymentId": "f54b66d9-5432-401f-8b17-31214e6c5a79",
+    "url": "https://f54b66d9.spotland.pages.dev",
+    "sourceCommit": "13fe14d",
+    "capturedAt": "2026-10-02T16:39:06.992Z",
     "verification": "Captured automatically immediately before the next managed Pages release."
   },
   "lastCandidate": {
-    "commit": "13fe14d",
-    "url": "https://f54b66d9.spotland.pages.dev",
-    "deployedAt": "2026-10-02T12:38:28.240Z",
+    "commit": "cfdce7b",
+    "url": "https://8ccbd3ce.spotland.pages.dev",
+    "deployedAt": "2026-10-02T16:39:24.362Z",
     "health": "passed"
   },
   "lastRollback": null
