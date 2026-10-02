@@ -55,6 +55,9 @@
 
 .app-shell{max-width:none;padding:0}.home-content{max-width:1120px;margin:auto;padding:40px 28px 0}@media(max-width:700px){.home-content{padding:28px 20px 0}}
 
+/* Home actions stay compact on small phones and never overflow horizontally. */
+.quick-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}.quick-actions button{margin:0;min-height:44px;max-width:100%;overflow-wrap:anywhere}.quick-actions .button{width:auto;min-width:176px;margin:0}.quick-actions .safety-entry{background:#fff7f5}.quick-actions .emergency-entry{background:#a40000;color:#fff;border-color:#760000}@media(max-width:700px){.quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:18px}.quick-actions button,.quick-actions .button{width:100%;min-width:0;justify-content:center;padding:10px 8px;font-size:12px;line-height:1.25}.quick-actions .button{grid-column:span 2;font-size:14px}.hero{padding-top:18px}.intro p{font-size:16px}.postcard{box-shadow:6px 6px 0 #242b27}.section-heading{align-items:flex-end}.mood{padding:18px}.status-bar{font-size:10px;line-height:1.5}.map-area,.safety-map,.event-map{min-height:280px;height:52dvh}.place-sheet,.safety-detail{bottom:0;width:100%;max-height:78dvh;border-inline-width:2px}.place-sheet{padding:16px}.trip-hourly{margin-inline:-2px}.trip-hourly table{min-width:500px}}@media(max-width:380px){.quick-actions{grid-template-columns:1fr}.quick-actions .button{grid-column:auto}.topbar{padding-inline:12px}.brand{font-size:19px}.theme{padding:8px;font-size:11px}h1{font-size:clamp(45px,15vw,58px)}.home-content{padding-inline:14px}.postcard{margin-inline:2px}.landscape{height:210px}}
+
 
 .stamp{background:#fffcf3;color:#b73522}
 

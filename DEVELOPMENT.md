@@ -1,6 +1,6 @@
 # SPOTLAND development guide
 
-Last updated: 2026-10-01
+Last updated: 2026-10-02
 Release status: public production site at [spotland.pages.dev](https://spotland.pages.dev); launch gates remain in [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md).
 
 This is the living record for each iteration. Update the relevant sections and add one row to the iteration log in the same change that affects user experience, UI, architecture, services, deployment or release operations. `npm run docs:check` validates its required structure; every managed frontend release runs that check.
@@ -66,4 +66,5 @@ The Dashboard fallback is **Workers & Pages → spotland → Deployments → sel
 
 | Date | Iteration | UI/UX, architecture or service change | Verification |
 | --- | --- | --- | --- |
+| 2026-10-02 | Responsive layout pass | Grouped home actions into responsive navigation tiles, simplified phone spacing, and added safe viewport sizing for maps and bottom sheets from 380 px upward. | Lint, typecheck and production build passed. |
 | 2026-10-01 | Release safeguards | Added this living development guide, required documentation check, managed Pages deployment snapshot and API-based rollback command. Initial protected rollback target is the verified `cd4c6456` production deployment. | Documentation check, lint, typecheck, 142 tests, production build and both production/rollback URLs passed. |
