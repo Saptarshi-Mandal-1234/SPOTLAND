@@ -59,7 +59,8 @@ test('expiry rejects reads/writes and scheduled cleanup deletes precise data eve
   const next = await create(db, cookie, 4, now + 3600001);
   await db.prepare('UPDATE live_shares SET expires_at=0 WHERE id=?').bind(next.data.id).run();
   await worker.scheduled(null, env(db)); expect((await db.prepare('SELECT COUNT(*) AS n FROM live_shares').first()).n).toBe(0);
-  await cleanupShares(env(db), now + 31 * 86400000); expect((await db.prepare('SELECT COUNT(*) AS n FROM devices').first()).n).toBe(0); expect((await db.prepare('SELECT COUNT(*) AS n FROM retired_share_keys').first()).n).toBe(0);
+  // The scheduled handler uses the real clock, so clean just beyond its 30-day retirement window.
+  await cleanupShares(env(db), Date.now() + 30 * 86400000 + 1); expect((await db.prepare('SELECT COUNT(*) AS n FROM devices').first()).n).toBe(0); expect((await db.prepare('SELECT COUNT(*) AS n FROM retired_share_keys').first()).n).toBe(0);
 });
 test('rejects invalid durations/positions, enforces one active share and device update/daily limits', async () => {
   const db = testDb(), cookie = await device(db); await expect(create(db, cookie, 24)).rejects.toMatchObject({ status: 400 }); const { data } = await create(db, cookie);
