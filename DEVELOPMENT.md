@@ -66,6 +66,7 @@ The Dashboard fallback is **Workers & Pages → spotland → Deployments → sel
 
 | Date | Iteration | UI/UX, architecture or service change | Verification |
 | --- | --- | --- | --- |
+| 2026-10-02 | Landing delivery | Enabled automatic PWA updates so installed copies adopt the postcard landing release without retaining the previous offline shell. | Production build run before release. |
 | 2026-10-02 | Landing-page navigation | Made the postcard hero the dedicated first screen, removed the offline status strip, and moved all feature entry points to a separate responsive “Where to?” page. | Lint, typecheck and production build passed. |
 | 2026-10-02 | Release-check reliability | Stabilized the scheduled live-share cleanup check around its real-clock retirement window. | The focused test passed twice before the full release gate. |
 | 2026-10-02 | Responsive layout pass | Grouped home actions into responsive navigation tiles, simplified phone spacing, and added safe viewport sizing for maps and bottom sheets from 380 px upward. | Lint, typecheck and production build passed. |
